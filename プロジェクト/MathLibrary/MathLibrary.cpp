@@ -41,3 +41,8 @@ bool CheckVertical(float Slope1, float Slope2)
 	}
 	return false;
 }
+
+// todo
+// 目的  : 入力されたスカラーから直線での移動座標を取得
+// 入力1 : 座標を計算するための値
+// 出力  : 2次元での位置座標

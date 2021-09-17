@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vulkan", "Vulkan.vcxproj", "{144F647E-BCE9-4066-8860-00D6081AE816}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathLibrary", "..\..\MathLibrary\MathLibrary.vcxproj", "{74BB4D71-A85C-4119-A377-6A7415ADF55B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{144F647E-BCE9-4066-8860-00D6081AE816}.Release|x64.Build.0 = Release|x64
 		{144F647E-BCE9-4066-8860-00D6081AE816}.Release|x86.ActiveCfg = Release|Win32
 		{144F647E-BCE9-4066-8860-00D6081AE816}.Release|x86.Build.0 = Release|Win32
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Debug|x64.ActiveCfg = Debug|x64
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Debug|x64.Build.0 = Debug|x64
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Debug|x86.ActiveCfg = Debug|Win32
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Debug|x86.Build.0 = Debug|Win32
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Release|x64.ActiveCfg = Release|x64
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Release|x64.Build.0 = Release|x64
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Release|x86.ActiveCfg = Release|Win32
+		{74BB4D71-A85C-4119-A377-6A7415ADF55B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
