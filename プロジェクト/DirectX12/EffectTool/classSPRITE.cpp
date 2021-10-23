@@ -372,7 +372,7 @@ bool SPRITE::BackInit(const char* _FileName, XMFLOAT3 _Pos, float _Width, float 
 		}
 
 		// ピクセルシェーダー作成
-		if (FAILED(DirectX12_Wrapper::CompileShader("Shader/PSNoise.hlsl", "main", "ps_5_0", psBlob.ReleaseAndGetAddressOf())))
+		if (FAILED(DirectX12_Wrapper::CompileShader("Shader/PS.hlsl", "main", "ps_5_0", psBlob.ReleaseAndGetAddressOf())))
 		{
 			MessageBox(nullptr, "ピクセルシェーダーの読み込みに失敗しました。", "Error", MB_OK);
 			return false;

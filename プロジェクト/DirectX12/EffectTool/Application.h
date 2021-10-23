@@ -3,7 +3,7 @@
 #include "DIRECTX12.h"
 #include "classSPRITE.h"
 #include "CDirectInput.h"
-//#include "EFFECTTOOL.h"
+#include "EFFECTTOOL.h"
 
 #pragma comment(lib, "dinput8.lib")
 
