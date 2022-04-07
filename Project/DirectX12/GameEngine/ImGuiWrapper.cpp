@@ -61,7 +61,9 @@ bool ImGuiUtil::Init(HWND _hWnd, ID3D12Device* _Device)
 	}
 
 	// “ú–{Œê‰»
-	io.Fonts->AddFontFromFileTTF("assets\\Font\\UDDigiKyokashoN-R.ttc", 14.0f, nullptr, glyphRangesJapanese);
+	io.Fonts->AddFontFromFileTTF("Assets\\Font\\UDDigiKyokashoN-R.ttc", 14.0f, nullptr, glyphRangesJapanese);
+	//io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\meiryo.ttc", 18.0f, nullptr, glyphRangesJapanese);
+
 
 	return true;
 }

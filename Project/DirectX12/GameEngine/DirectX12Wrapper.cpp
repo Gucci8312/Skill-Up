@@ -3,6 +3,14 @@ using namespace DirectX12Wrapper;
 
 DirectX12Util* DirectX12Util::Instance = nullptr;
 
+void EnableDebugLayer() {
+	ID3D12Debug* debugLayer = nullptr;
+	if (SUCCEEDED(D3D12GetDebugInterface(IID_PPV_ARGS(&debugLayer)))) {
+		debugLayer->EnableDebugLayer();
+		debugLayer->Release();
+	}
+}
+
 // 生成
 void DirectX12Util::Create()
 {
@@ -33,7 +41,7 @@ bool DirectX12Util::Init(HWND _hWnd, int _Width, int _Height)
 		D3D_FEATURE_LEVEL_12_0,
 		D3D_FEATURE_LEVEL_11_1,
 		D3D_FEATURE_LEVEL_11_0,
-};
+	};
 
 #ifdef DEBUG
 	CreateDXGIFactory2(DXGI_CREATE_FACTORY_DEBUG, IID_PPV_ARGS(DxgiGactory.ReleaseAndGetAddressOf()));
@@ -204,7 +212,7 @@ bool DirectX12Util::Init(HWND _hWnd, int _Width, int _Height)
 		ViewPort.Width = _Width;		// 画面の横幅
 		ViewPort.Height = _Height;		// 画面の縦幅
 		ViewPort.TopLeftX = 0;			// 左上X座標
-		ViewPort.TopLeftY = 0;				// 左上Y座標
+		ViewPort.TopLeftY = 0;			// 左上Y座標
 		ViewPort.MaxDepth = 1.0f;		// 深度の最大値
 		ViewPort.MinDepth = 0.0f;		// 深度の最小値
 	}
@@ -265,7 +273,7 @@ bool DirectX12Util::Init(HWND _hWnd, int _Width, int _Height)
 	}
 
 	return true;
-	}
+}
 
 void DirectX12Util::UnInit()
 {
@@ -329,6 +337,16 @@ void DirectX12Util::FenceWait()
 		WaitForSingleObject(event, INFINITE);							// イベントが発生するまで待つ
 		CloseHandle(event);												// イベント終了
 	}
+}
+
+void DirectX12Wrapper::DirectX12Util::SetViewPortParmeter(XMFLOAT2 Size, XMFLOAT2 Pos, XMFLOAT2 Depth)
+{
+	ViewPort.Width = Size.x;			// 画面の横幅
+	ViewPort.Height = Size.y;			// 画面の縦幅
+	ViewPort.TopLeftX = Pos.x;			// 左上X座標
+	ViewPort.TopLeftY = Pos.y;			// 左上Y座標
+	ViewPort.MaxDepth = Depth.x;		// 深度の最大値
+	ViewPort.MinDepth = Depth.y;		// 深度の最小値
 }
 
 void DirectX12Util::BarrierResouce(ID3D12Resource* _Resouce, D3D12_RESOURCE_STATES _BeforeState, D3D12_RESOURCE_STATES _AfterState)

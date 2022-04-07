@@ -10,6 +10,8 @@
 #include <DirectXTex.h>
 #include <d3dcompiler.h>
 
+#define DEBUG
+
 #pragma comment(lib,"d3d12.lib")
 #pragma comment(lib,"dxgi.lib")
 #pragma comment(lib,"d3dcompiler.lib")
@@ -57,8 +59,10 @@ namespace DirectX12Wrapper
 		void BeforeRender();
 		void AfterRender();
 		void FenceWait();
+		void SetViewPortParmeter(XMFLOAT2 Size, XMFLOAT2 Pos, XMFLOAT2 Depth);
 		void BarrierResouce(ID3D12Resource* _Resouce, D3D12_RESOURCE_STATES _BeforeState, D3D12_RESOURCE_STATES _AfterState);
 		ID3D12Device* GetDevice() { return Device.Get(); }
 		ID3D12GraphicsCommandList* GetCmdList() { return CmdList.Get(); }
+		IDXGISwapChain3* GetSwapChain() { return SwapChain.Get(); }
 	};
 }

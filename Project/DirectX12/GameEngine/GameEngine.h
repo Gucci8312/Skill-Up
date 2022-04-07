@@ -1,14 +1,14 @@
 #pragma once
 #include "ImGuiWrapper.h"
 #include <vector>
-#include "GameObject.h"
+//#include "ComponentObject.h"
 #include <string>
 
 // ゲームエンジン管理クラス
 class GameEngine
 {
 private:
-	std::vector<GameObject*> Object;
+	//std::vector<ComponentObject*> Object;
 	bool InspecterFlg = false;
 	bool HierarchieFlg = false;
 	bool ConsoleFlg = false;

@@ -1,17 +1,17 @@
 #include "main.h"
 
-LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
+//LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);			// ウインドウプロシージャ
 
 int g_nFPS;
 int WINAPI WinMain(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpszArgs, int _nWinMode)
 {
 	HWND hWnd;
-	LPCTSTR szClassName = TEXT(WINDOW_NAME);
+	LPCSTR szClassName = TEXT(WINDOW_NAME);
 	MSG msg;
 	WNDCLASSEX wcex =
 	{
-		sizeof(WNDCLASSEX),				// WNDCLASSEXのメモリサイズを指定
+				sizeof(WNDCLASSEX),				// WNDCLASSEXのメモリサイズを指定
 		CS_CLASSDC,						// 表示するウインドウのスタイルを設定
 		WndProc,						// ウィンドウプロシージャのアドレス(関数名)を指定
 		0,								// 通常は使用しないので"0"を指定
@@ -23,9 +23,10 @@ int WINAPI WinMain(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpszAr
 		NULL,							// Windowにつけるメニューを設定
 		CLASS_NAME,						// ウインドウクラスの名前
 		NULL							// 小さいアイコンが設定された場合の情報を記述
+
 	};
 
-	// ウィンドウクラスの登録
+		// ウィンドウクラスの登録
 	RegisterClassEx(&wcex);
 
 	// ウィンドウの作成
@@ -144,7 +145,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	default:
 		break;
 	}
-	ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
+	//ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
 
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
